@@ -1,15 +1,20 @@
 # 🌍 Data Insights: CO₂ Emissions by Country, Region, and Sector   
 
 ## Introduction    
+
+This project simulates a consultancy case at a **country-level granularity**. The analysis highlights how emissions differ across nations and regions, helping governments, international organizations, and multinational companies prioritize policies, investments, and ESG strategies.  
+
 Climate change is not only an environmental challenge but also a strategic business and policy concern. Carbon dioxide (CO₂) emissions, as the main driver of global warming, directly impact economic stability, regulatory frameworks, corporate sustainability strategies, and long-term investment decisions.  
 
-This project develops an interactive dashboard in Tableau/Power BI to track and analyze CO₂ emissions by country, region, and sector. The aim is to provide decision-makers, analysts, and stakeholders with clear insights into emission trends, sectoral contributions, and global disparities.  
+This project develops an **interactive dashboard in Tableau/Power BI** to track and analyze CO₂ emissions by country, region, and sector. The goal is to provide decision-makers, analysts, and stakeholders with clear insights into emission trends, sectoral contributions, and global disparities.  
 
-By leveraging this analysis, organizations and policymakers can benchmark performance, identify high-impact sectors, evaluate regional progress, and align strategies with global sustainability goals (e.g., Net Zero and ESG reporting).  
+By leveraging this analysis, organizations and policymakers can benchmark performance, identify high-impact sectors, evaluate regional progress, and align strategies with global sustainability goals (e.g., Net Zero targets and ESG reporting).  
 
 The dataset used comes from Kaggle:  
 Dangi, S. (2024). *CO₂ Emissions across Countries, Regions and Sectors*. Kaggle. Available at: https://www.kaggle.com/datasets/shreyanshdangi/co-emissions-across-countries-regions-and-sectors  
 
+Tableau public links:
+WIP  
 
 ---
 
