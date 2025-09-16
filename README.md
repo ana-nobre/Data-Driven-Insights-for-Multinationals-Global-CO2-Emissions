@@ -13,8 +13,11 @@ By leveraging this analysis, organizations and policymakers can benchmark perfor
 The dataset used comes from Kaggle:  
 Dangi, S. (2024). *CO₂ Emissions across Countries, Regions and Sectors*. Kaggle. Available at: https://www.kaggle.com/datasets/shreyanshdangi/co-emissions-across-countries-regions-and-sectors  
 
-Tableau public links:
-WIP  
+GitHub Project link:
+https://github.com/users/BiancaGemarR/projects/1
+
+Tableau public link:
+https://public.tableau.com/views/DataInsightsCOEmissionsbyCountryRegionandSector/Dashboard-1?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 ---
 
@@ -69,11 +72,10 @@ This project aims to provide answers to the following research questions:
 
 ---
 
-## 📌 Key Insights (sample - to be expanded)
-- The **energy sector** accounts for over **X% of global CO₂ emissions**.  
-- Over the past X years, **X** has shown the fastest growth in emissions, driven by industrial development.  
-- Several X countries demonstrate a **sustained reduction trend**, while Y continue to grow rapidly.  
-- **Per capita emissions** reveal strong inequalities: some X, Y countries exceed the levels of large emerging economies.  
+## 📌 Key Insights 
+- Over the past **20 years**, **China** has shown the fastest growth in emissions, driven by rapid industrial development and coal-based energy.  
+- Several **European countries** (e.g., UK, Germany, France) demonstrate a **sustained reduction trend**, while **India and many Southeast Asian countries** continue to grow rapidly.  
+- **Per capita emissions** reveal strong inequalities: some **small, oil-rich states** (Qatar, Kuwait, UAE) exceed the levels of large emerging economies like **India or Brazil**, despite their much smaller populations.  
 
 ---
 
@@ -87,10 +89,11 @@ This project aims to provide answers to the following research questions:
 
 ## 📂 Repository Structure  
 ```bash
+
+├── EDA/                 # EDA and data preparation scripts 
 ├── data/                # Original and transformed dataset  
-├── notebooks/           # EDA and data preparation scripts  
-├── dashboard/           # Tableau / Power BI files  
-├── presentation/        # Final presentation in PDF/PPTX  
+├── Tableau Dashboard/   # Tableau files 
+├── Power BI Dashboard/  # Power BI files   
 └── README.md            # Project documentation  
 ```  
 
@@ -101,8 +104,8 @@ This project aims to provide answers to the following research questions:
 - **Data Analyst, BI Developer, and Data Storyteller:**  
   Ana Nobre, Bianca Gemar, Gabriela Layas, and Zara Valentinova  
 
-- **Scrum Masters:**  
-  Ana Nobre and Zara Valentinova  
+- **Scrum Master:**  
+  Ana Nobre   
 
 ---
 
