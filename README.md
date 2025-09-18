@@ -13,8 +13,7 @@ By leveraging this analysis, organizations and policymakers can benchmark perfor
 The dataset used comes from Kaggle:  
 Dangi, S. (2024). *CO₂ Emissions across Countries, Regions and Sectors*. Kaggle. Available at: https://www.kaggle.com/datasets/shreyanshdangi/co-emissions-across-countries-regions-and-sectors  
 
-GitHub Project link:
-https://github.com/users/BiancaGemarR/projects/1
+GitHub Project link: https://github.com/users/BiancaGemarR/projects/1
 
 Tableau public link:
 https://public.tableau.com/views/DataInsightsCOEmissionsbyCountryRegionandSector/Dashboard-1?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
