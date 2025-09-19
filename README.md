@@ -15,8 +15,7 @@ Dangi, S. (2024). *CO₂ Emissions across Countries, Regions and Sectors*. Kaggl
 
 GitHub Project link: https://github.com/users/BiancaGemarR/projects/1
 
-Tableau public link:
-https://public.tableau.com/views/DataInsightsCOEmissionsbyCountryRegionandSector/Dashboard-1?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+Tableau public link: https://public.tableau.com/views/DataInsightsCOEmissionsbyCountryRegionandSector/Dashboard-1Logarithmic?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 ---
 
