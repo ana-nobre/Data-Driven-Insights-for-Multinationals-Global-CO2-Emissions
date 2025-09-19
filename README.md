@@ -49,7 +49,7 @@ This project aims to provide answers to the following research questions:
 - Reviewed data quality, missing values, and outliers.  
 - Identified critical metrics: total, per capita, accumulated, and sectoral emissions.  
 
-### 🧼 Data Cleaning – Python Applied Examples  
+### 🔎 Data Cleaning – Python Applied Examples  
 
 ```python
 # Rename columns: snake_case -> space separated (only where '_' exists)
