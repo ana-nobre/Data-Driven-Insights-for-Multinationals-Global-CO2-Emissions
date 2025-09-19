@@ -190,7 +190,7 @@ PROMO56_PROYECTO_MOD4_TEAM2/
 
 ---
 
-## 🔮 Next Steps  
+## ✔️ Next Steps  
 - **Expand dataset scope** to include other greenhouse gases (CH₄, N₂O) for a broader climate impact assessment.  
 - **Increase granularity** by analyzing emissions at the subnational level (states/provinces).  
 - **Develop forecasting models** using machine learning to project emissions under different energy scenarios.  
@@ -199,13 +199,17 @@ PROMO56_PROYECTO_MOD4_TEAM2/
 
 ---
 
-## Team  
-
-- **Data Analyst, BI Developer, and Data Storyteller:**  
+## ✨ Team  
+- **Data Analysts, BI Developers, and Data Storytellers:**  
   Ana Nobre, Bianca Gemar, Gabriela Layas, and Zara Valentinova  
+  - Extract, transform and load (ETL) processes  
+  - Data visualization and dashboard development in Tableau and Power BI  
+  - Business storytelling through data insights  
 
-- **Scrum Master & Program Manager:**  
+- **Scrum Master & Project Lead:**    
   Ana Nobre  
+  - Managed GitHub Project and the Kanban dashboard, ensuring alignment between the team, technical tasks, project objectives, and deadlines
+  - Ensured agile practices through daily stand-ups, sprint reviews, and sprint retrospectives  
 
 ---
 
