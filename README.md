@@ -225,3 +225,5 @@ Intergovernmental Panel on Climate Change (2021) Climate Change 2021: The Physic
 
 NASA (2023) Earth Fact Sheet. NASA Solar System Exploration. Available at: https://solarsystem.nasa.gov/planets/earth/overview/ (Accessed: 17 September 2025).
 
+
+
