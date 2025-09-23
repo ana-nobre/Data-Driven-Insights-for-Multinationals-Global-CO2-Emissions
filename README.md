@@ -260,10 +260,9 @@ The **EDA, data cleaning, and transformation** into two CSVs were collaborativel
 
 ## 🌱 Personal Learning  
 
-This project was not only a technical exercise in EDA and visualization but also an opportunity to apply agile leadership in a remote and coding environment.  
-For Ana, it was a chance to connect her **10+ years of agile experience at Apple** with the challenges of a data-driven consultancy project: balancing technical accuracy, business storytelling, and collaborative delivery.  
+This project was not only a technical exercise in EDA and visualization but also an opportunity to apply agile leadership in a remote and coding environment. It was a chance to connect her **10+ years of agile experience at Apple** with the challenges of a data-driven consultancy project: balancing technical accuracy, business storytelling, and collaborative delivery.  
 
-- Applied her professional background, where she lived agile practices daily that includes:  
+- Applied professional background such as agile practices daily that includes:  
   - **On-site and remote leadership**, coordinating teams both within the same country and across countries (e.g., Mexico–Brazil, Mexico–US).  
   - **Daily downloads and weekly scheduling huddles** to synchronize cross-functional teams.  
   - Collaboration with **Retail People Operations (RPO)** to align staffing and operations.  
