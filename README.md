@@ -10,12 +10,6 @@ This project develops an **interactive dashboard in Tableau/Power BI** to track 
 
 By leveraging this analysis, organizations and policymakers can benchmark performance, identify high-impact sectors, evaluate regional progress, and align strategies with global sustainability goals (e.g., Net Zero targets and ESG reporting).  
 
-## Introduction    
-
-This project presents a consultancy case at a **country-level granularity**. The analysis highlights how emissions differ across nations and regions, helping multinational companies, governments, and international organizations prioritize policies, investments, and ESG strategies.  
-
-Climate change is not only an environmental challenge but also a strategic business and policy concern. Carbon dioxide (CO₂) emissions, as the main driver of global warming (IPCC, 2021), directly impact economic stability, regulatory frameworks, corporate sustainability strategies, and long-term investment decisions.  
-
 > **Note:** While CO₂ is the focus of this project, it is important to recognize that other greenhouse gases — such as methane (CH₄) and nitrous oxide (N₂O) — also play a critical role in global warming. Methane, for example, has been linked not only to climate impact but also to adverse public health effects, including an increased risk of cancer. Additionally, the energy transition is a long-term process, and depending on the industry under analysis, other gases might be more relevant to monitor. In this dataset, CO₂ was chosen, but future studies could fully leverage the GHG data in the database to expand the scope.
 
 The dataset used comes from Kaggle: 
