@@ -13,7 +13,10 @@ By leveraging this analysis, organizations and policymakers can benchmark perfor
 > **Note:** While CO₂ is the focus of this project, it is important to recognize that other greenhouse gases — such as methane (CH₄) and nitrous oxide (N₂O) — also play a critical role in global warming. Methane, for example, has been linked not only to climate impact but also to adverse public health effects, including an increased risk of cancer. Additionally, the energy transition is a long-term process, and depending on the industry under analysis, other gases might be more relevant to monitor. In this dataset, CO₂ was chosen, but future studies could fully leverage the GHG data in the database to expand the scope.
 
 The dataset used comes from Kaggle: 
-Dangi, S. (2024). *CO₂ Emissions across Countries, Regions and Sectors*. Kaggle. Available at: https://www.kaggle.com/datasets/shreyanshdangi/co-emissions-across-countries-regions-and-sectors  
+Dangi, S. (2024). *CO₂ Emissions across Countries, Regions and Sectors*. Kaggle. 
+
+Available at: 
+https://www.kaggle.com/datasets/shreyanshdangi/co-emissions-across-countries-regions-and-sectors  
 
 **Ana Nobre – Project Lead and Scrum Master**  
 
@@ -246,23 +249,47 @@ The **EDA, data cleaning, and transformation** into two CSVs were collaborativel
 - Apply agile leadership in a remote, pair programming and coding environment.  
 - Ensured agile practices with **daily stand-ups, sprint reviews, retrospectives, and backlog refinement**.  
 
-### **Next Steps – Ana Nobre** 
-- Individualy deu seguimento no projeto fazendo novos calculos estatisticos de quartis para para calcular tecnicamente os outliers de total emissions and emissions per capita.
-- Enhace Power BI graphs to align with more executive and consultancy tone. 
+### **Further Individual Contributions – Ana Nobre**  
+- Advanced the project individually by applying **quartile-based statistical analysis** to detect and justify outliers in both total emissions and emissions per capita.  
+  - Outliers were defined using the **IQR rule**:  
+    - Q1 = 25th percentile  
+    - Q3 = 75th percentile  
+    - IQR = Q3 – Q1  
+    - Outlier thresholds = [Q1 – 1.5 × IQR, Q3 + 1.5 × IQR]  
+
+- Created new **DAX measures** to enrich the insights presented in tooltips and visuals, including:  
+  ```DAX
+  % of Global CO2 =
+  VAR TotalSameYear =
+      CALCULATE(
+          SUM('data_clean_country'[CO2_MtCO2]),
+          ALL('data_clean_country'[Continent])  // remove continent filter, keep year
+      )
+  RETURN
+  DIVIDE( SUM('data_clean_country'[CO2_MtCO2]), TotalSameYear )
+  ```
+  - This measure allowed stakeholders to see each continent’s **share of global emissions** directly in tooltips (e.g., Asia ≈ 50–55% in 2023).  
+  - By combining absolute values (MtCO₂) and relative percentages, dashboards became more **executive-friendly** and decision-oriented.  
+
+  - Refined **Power BI dashboards** to improve clarity, executive readability, and consultancy-style storytelling by:  
+  - Standardizing all emission metrics into **MtCO₂** (millions of tonnes of CO₂).  
+  - Aligning axis formatting across visuals for consistency (removing “.00” artifacts, consistent decimal places).  
+  - Highlighting Asia and Europe with stronger colors to emphasize key insights (Asia >50% global emissions; Europe’s post-2005 decline).  
+  - Adding annotations for key climate milestones (Kyoto Protocol 2005, Paris Agreement 2015).  
+
 
 ---
 
 ## 🌱 Personal Learning  
 
-This project was not only a technical exercise in EDA and visualization but also an opportunity to apply agile leadership in a remote and coding environment. It was a chance to connect her **10+ years of agile experience at Apple** with the challenges of a data-driven consultancy project: balancing technical accuracy, business storytelling, and collaborative delivery.  
+This project went beyond technical work in EDA and visualization — it became an opportunity to apply my **10+ years leadership experience using agile practices** to a data-driven development conext. I led proven agile practices (remote collaboration, sprint planning, daily stand-ups, retrospectives, and backlog refinement) to drive efficiency and clarity in a coding and analytics environment.  
 
-- Applied professional background such as agile practices daily that includes:  
-  - **On-site and remote leadership**, coordinating teams both within the same country and across countries (e.g., Mexico–Brazil, Mexico–US).  
-  - **Daily downloads and weekly scheduling huddles** to synchronize cross-functional teams.  
-  - Collaboration with **Retail People Operations (RPO)** to align staffing and operations.  
-  - Experience leading **cross-functional squads** across different time zones.  
-  - Strong culture of **continuous improvement, transparency, and accountability**.  
+It allowed me to connect with the challenges of real technical and consultancy work:  
+- Balancing **technical accuracy** with **executive-level storytelling**.  
+- Practicing **pair programming and collaborative delivery** in distributed teams.
+- Translating complex datasets into **clear, decision-oriented insights** for business stakeholders.  
 
+This experience reinforced my ability to bridge **my leadership experience and advanced analytics**, ensuring that technical rigor and strategic impact move hand in hand.  
 
 ---
 
