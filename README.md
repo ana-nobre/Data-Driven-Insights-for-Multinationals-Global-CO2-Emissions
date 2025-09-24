@@ -51,6 +51,8 @@ This project aims to provide answers to the following research questions:
 5. **What is the relationship between CO₂ emissions and population, both at country and continental level?**  
 6. **Which countries are outliers when comparing total CO₂ emissions vs per capita emissions?**  
 
+> Note: Since the focus of the analysis is on industry and energy consumption, we selected the co2 column, which excludes land-use change (LUC) emissions, prioritizing only those directly linked to economic and industrial activity.
+
 ---
 
 ## 🛠️ Methodology  
@@ -162,37 +164,44 @@ Each bubble represents a country, with size indicating magnitude of emissions (l
 
 ### Power BI – CO₂ Emissions per Continent  
 
-![Power BI Dashboard](./Power-BI-Dashboards/(1)dashboard-powerbi.png)  
+![Power BI Dashboard](./Power-BI-Dashboards/(1)dashboard-powerbi.png)
 
-*This dashboard shows the **average emissions by continent** (bar chart) and the **evolution of CO₂ emissions** over time (line chart).*  
+*This dashboard presents the **average annual CO₂ emissions by continent** (bar chart) and the **trend of total CO₂ emissions (2001–2023)** (line chart).*
 
-- **Continental insights:**  
-  - Asia leads in both average emissions and growth.  
-  - North America remains high but relatively stable.  
-  - Europe shows sustained decline since the 2000s, partly reflecting **Kyoto Protocol commitments**.  
-  - The **Paris Agreement (2015)** set long-term targets, though effects are not yet visible in the data.  
-
-- **Scenario dashboards:**  
-  Removing one major emitter (e.g., China) drastically shifts global trajectories, showing the **disproportionate influence of a handful of countries**.  
+- **Key insights by continent:**
+  - **Asia** leads both in annual average and continuous growth.  
+  - **North America** remains high but relatively stable over time.  
+  - **Europe** shows a **sustained decline since the early 2000s**; the chart annotations highlight the **Kyoto Protocol (2005)** and the **Paris Agreement (2015)** as regulatory milestones.  
+  - **Africa, South America, and Oceania** contribute a smaller share to the global total.  
 
 ---
 
-### Power BI – Energy Consumption  
+![Power BI Dashboard](./Power-BI-Dashboards/(2)dashboard-powerbi.png)
 
-![Power BI Dashboard](./Power-BI-Dashboards/(2)dashboard-powerbi.png)  
+*This dashboard allows simulating the **impact of removing a single country** from continental totals, highlighting the disproportionate weight of major emitters (e.g., China, the US, India). Use the panel on the right to test different scenarios.*  
 
-This dashboard compares **primary energy consumption and CO₂ emissions by continent**, using line charts, stacked bars, and a pie chart. Asia represents **over 50%** of global primary energy consumption, linking directly to its CO₂ dominance.  
+- **Top 10 Button (Total × Per Capita):**  
+  - A **button/slicer** is provided to toggle toggle between **Top 10 by total emissions** and **Top 10 by per capita emissions**.  
+  - **How it works in Power BI (technical note for README):**  
+    1. A **Field Parameter** was created with two options: *Total CO₂ (MtCO₂)* and *CO₂ per capita (tCO₂/person)*.  
+    2. This parameter is used in a **button-style slicer**, dynamically switching the metric displayed in rankings and visuals.  
+    3. The ranking uses `RANKX()` over the selected metric to return the appropriate **Top 10**.  
+  - **Analytical reading:** Switching to *per capita* highlights countries with small populations but very high individual footprints, while *total* emphasizes the largest economies/populations.  
 
 ---
 
-### Outlier Analysis – Boxplots  
+### Power BI – Gauge Graph (Work in Progress)  
 
-(Boxplots under construction)  
+**Gauge visualization** will be used to compare **CO₂ emissions per capita** of each country or continent against the **global average**.
 
-Planned analysis:  
-- **Total CO₂ emissions** → detecting countries with extreme total contributions.  
-- **CO₂ per capita** → identifying disproportionate emitters (e.g., Qatar, Kuwait).  
+**Global context**: Instead of showing just absolute emissions, the gauge highlights whether a country is above or below the *world’s “normal”*.
+**People-centric**: Per capita data links emissions to the population, showing the relative impact of individuals across countries.
+**Regulatory risk**: Countries above the global average are more exposed to carbon taxes, tariffs, and stricter climate policies — key risks for multinational operations.
+**ESG narrative**: This framing supports transparency and strategic communication with investors, customers, and regulators.
 
+> Example: If the global average is ~5 tCO₂ per person, the gauge makes it evident that the U.S. (~14 tCO₂) or Qatar (~30+ tCO₂) are far above the baseline.
+
+ 
 ---
 
 ## 💻 Tools Used  
@@ -222,7 +231,6 @@ DATA-DRIVEN-INSIGHTS-FOR-MULTINATIONALS/
 ├── data_clean_country.csv
 ├── data_clean_regions.csv
 ├── data.csv
-├── research_questions.ipynb
 └── README.md
 ```  
 
@@ -257,26 +265,45 @@ The **EDA, data cleaning, and transformation** into two CSVs were collaborativel
     - IQR = Q3 – Q1  
     - Outlier thresholds = [Q1 – 1.5 × IQR, Q3 + 1.5 × IQR]  
 
+> Note: Check EDA_CO2.ipynb for more details.  
+
 - Created new **DAX measures** to enrich the insights presented in tooltips and visuals, including:  
-  ```DAX
-  % of Global CO2 =
-  VAR TotalSameYear =
-      CALCULATE(
-          SUM('data_clean_country'[CO2_MtCO2]),
-          ALL('data_clean_country'[Continent])  // remove continent filter, keep year
-      )
-  RETURN
-  DIVIDE( SUM('data_clean_country'[CO2_MtCO2]), TotalSameYear )
+
+```DAX
+-- Rank by total CO₂ emissions (excluding Antarctica)
+Rank Total CO2 =
+RANKX (
+    ALL ( 'data_clean_country'[country] ),
+    [CO2 (less Antartica)],
+    ,
+    DESC,
+    Dense
+)
+
+-- Rank by CO₂ emissions per capita
+Rank CO2 per Capita (t) =
+RANKX (
+    ALL ( 'data_clean_country'[country] ),
+    [CO2 per capita (t)],
+    ,
+    DESC,
+    Dense
+)
   ```
-  - This measure allowed stakeholders to see each continent’s **share of global emissions** directly in tooltips (e.g., Asia ≈ 50–55% in 2023).  
-  - By combining absolute values (MtCO₂) and relative percentages, dashboards became more **executive-friendly** and decision-oriented.  
+
+Creating dedicated **DAX measures** for ranking both total and per capita emissions is essential for producing accurate and dynamic insights in Power BI:  
+
+**Comparability:** Without explicit ranking measures, visuals may misrepresent positions when filters or slicers are applied. The DAX ensures rankings always update consistently.  
+**Dual perspective:** Total emissions highlight the largest economies and most populous nations, while per capita emissions reveal intensity at the individual level. This dual view prevents biased conclusions.  
+**Dynamic tooltips and visuals:** By embedding these measures in tooltips, users get contextual insights directly in the dashboard, making the analysis more interactive and intuitive.  
+**Policy and business relevance:** Governments and multinational organizations need both perspectives—absolute contribution to climate change and relative fairness per citizen—to design effective policies, negotiate targets, or benchmark corporate strategies.  
+
 
   - Refined **Power BI dashboards** to improve clarity, executive readability, and consultancy-style storytelling by:  
   - Standardizing all emission metrics into **MtCO₂** (millions of tonnes of CO₂).  
-  - Aligning axis formatting across visuals for consistency (removing “.00” artifacts, consistent decimal places).  
   - Highlighting Asia and Europe with stronger colors to emphasize key insights (Asia >50% global emissions; Europe’s post-2005 decline).  
   - Adding annotations for key climate milestones (Kyoto Protocol 2005, Paris Agreement 2015).  
-
+  -Adding new executive-style titles and subtitles
 
 ---
 
@@ -295,8 +322,14 @@ This experience reinforced my ability to bridge **my leadership experience and a
 
 ## References  
 
-European Environment Agency (2024) *CO₂ emissions performance of new passenger cars in Europe*, European Environment Agency, 16 December. Available at: https://www.eea.europa.eu/en/analysis/indicators/co2-performance-of-new-passenger (Accessed: 16 September 2025).  
+European Commission (no date) The Kyoto Protocol. Available at: https://climate.ec.europa.eu/eu-action/international-action-climate-change/kyoto-protocol_en 
+(Accessed: 24 September 2025).
 
-Intergovernmental Panel on Climate Change (2021) Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change. Cambridge University Press. Available at: https://www.ipcc.ch/report/ar6/wg1/ (Accessed: 17 September 2025).  
+European Environment Agency (2024) *CO₂ emissions performance of new passenger cars in Europe*, European Environment Agency, 16 December. Available at: https://www.eea.europa.eu/en/analysis/indicators/co2-performance-of-new-passenger 
+(Accessed: 16 September 2025).  
 
-NASA (2023) Earth Fact Sheet. NASA Solar System Exploration. Available at: https://solarsystem.nasa.gov/planets/earth/overview/ (Accessed: 17 September 2025).  
+Intergovernmental Panel on Climate Change (2021) Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change. Cambridge University Press. Available at: https://www.ipcc.ch/report/ar6/wg1/ 
+(Accessed: 17 September 2025).  
+
+NASA (2023) Earth Fact Sheet. NASA Solar System Exploration. Available at: https://solarsystem.nasa.gov/planets/earth/overview/ 
+(Accessed: 17 September 2025). 
