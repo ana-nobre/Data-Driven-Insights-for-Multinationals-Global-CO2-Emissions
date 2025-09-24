@@ -223,7 +223,7 @@ DATA-DRIVEN-INSIGHTS-FOR-MULTINATIONALS/
 ├── Power-BI-Dashboards/
 │   ├── (1)dashboard-powerbi.png
 │   ├── (2)dashboard-powerbi.png
-│   └── (3)dashboard-powerbi.png
+│   └── Data-Insights-CO2-Global-Emissions-Power-BI.pbix
 ├── Tableau-Dashboards/
 │   ├── (1)dashboard-tableau.png
 │   ├── (2)dashboard-tableau.png
