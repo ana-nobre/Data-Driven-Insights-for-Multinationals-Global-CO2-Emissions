@@ -111,7 +111,7 @@ df_filtrado.to_csv('data_clean_country.csv', index=False)
 
 ### Tableau – Population vs CO₂  
 
-![Tableau Dashboard](./Tableau-Dashboards/(1)dashboard-tableau.png)  
+![Tableau Dashboard](./Tableau-Dashboards/(1)-dashboard-tableau.png)  
 
 *This dashboard compares **population vs CO₂ emissions** in two perspectives: a standard scatter plot and a **logarithmic scale** version. The logarithmic view makes it possible to visualize both very large and very small emitters, while trendlines per continent help to understand expected emission levels relative to population.*  
 
@@ -134,7 +134,7 @@ df_filtrado.to_csv('data_clean_country.csv', index=False)
 
 ### Tableau – Top 10 Analysis  
 
-![Tableau Dashboard](./Tableau-Dashboards/(2)dashboard-tableau.png)  
+![Tableau Dashboard](./Tableau-Dashboards/(2)-dashboard-tableau.png)  
 
 Each bubble represents a country, with size indicating magnitude of emissions (left) or population (right).  
 
@@ -150,7 +150,7 @@ Each bubble represents a country, with size indicating magnitude of emissions (l
 
 ### Tableau – Dual Perspective: Total vs Per Capita  
 
-![Tableau Dashboard](./Tableau-Dashboards/(3)dashboard-tableau.png)  
+![Tableau Dashboard](./Tableau-Dashboards/(3)-dashboard-tableau.png)  
 
 - **Left (Total emissions):**  
   Giants like **China, US, and India** dominate total CO₂ volumes. Even with lower per capita averages, their populations make them the largest contributors.  
